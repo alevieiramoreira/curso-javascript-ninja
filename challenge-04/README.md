@@ -125,7 +125,6 @@ carro.adicionarPessoas = function(nroPessoas){
     }
 
     if(totalPessoas > carros.assentos){
-
         return `Só cabem mais ${assentosFaltantes} ${pluralOuSingular}!` 
     }
 
