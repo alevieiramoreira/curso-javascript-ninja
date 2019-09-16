@@ -83,18 +83,19 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log(`O livro Harry Potter tem ${book('Harry Potter').numberOfPages} páginas!`);
+var bookName = 'Hunger Games';
+console.log(`O livro ${bookName} tem ${book( bookName ).numberOfPages} páginas!`);
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log(`O autor do livro Percy Jackson é do autor ${book('Percy Jackson').author}.`);
+console.log(`O autor do livro ${bookName} é do autor ${book( bookName ).author}.`);
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log(`A editora do livro Hunger Games é ${book('Hunger Games').publisher}.`);
+console.log(`A editora do livro ${bookName} é ${book( bookName ).publisher}.`);
