@@ -8,7 +8,7 @@ equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
 */
 var isTruthy = function(param){
-  return !!param ? true : false; 
+  return !!param; 
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -31,6 +31,7 @@ isTruthy("0");
 isTruthy('Alessandra');
 isTruthy([]);
 isTruthy({});
+isTruthy(function(){});
 isTruthy([ 1, 2, 3]);
 
 
@@ -92,7 +93,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo = function(){
-    return `Esse carro é um ${carro.marca} ${carro.modelo}`
+    return `Esse carro é um ${carro.obterMarca()} ${carro.obterModelo()}`
 }
 
 /*
@@ -114,28 +115,23 @@ citado acima, no lugar de "pessoas".
 
 carro.adicionarPessoas = function(nroPessoas){
     
-    
-    if(carro.assentos < nroPessoas && carro.assentos > 0){
-        
-        if(carro.assentos < nroPessoas && carro.assentos === 1){
-            return `Só cabe mais ${carro.assentos} pessoa.`;
-        }       
-        return `Só cabem mais ${carro.assentos} pessoas.`;       
-    }
+    var totalPessoas = carro.quantidadePessoas + nroPessoas;
+    var assentosFaltantes = carro.assentos - carro.quantidadePessoas;
+    var pluralOuSingular = assentosFaltantes === 1 ? 'pessoa' : 'pessoas';
 
 
-
-    if (carro.assentos === 0){
-        
+    if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos){
         return `O carro já está lotado!`;
     }
 
-    carro.assentos -= nroPessoas;
+    if(totalPessoas > carros.assentos){
+
+        return `Só cabem mais ${assentosFaltantes} ${pluralOuSingular}!` 
+    }
 
     carro.quantidadePessoas += nroPessoas;
     
     return `Já temos ${carro.quantidadePessoas} pessoas no carro!`
-
 }
 
 /*
@@ -149,13 +145,13 @@ Qual a cor atual do carro?
 carro.obterCor(); //preto
 
 // Mude a cor do carro para vermelho.
-carro.cor = 'vermelho';
+carro.mudarCor('vermelho');
 
 // E agora, qual a cor do carro?
 carro.obterCor(); // vermelho
 
 // Mude a cor do carro para verde musgo.
-carro.cor = 'verde musgo';
+carro.mudarCor('verde musgo')
 
 // E agora, qual a cor do carro?
 carro.obterCor(); //verde musgo
@@ -173,11 +169,11 @@ carro.adicionarPessoas(4); // 'Só cabem mais 3 pessoas no carro.'
 carro.adicionarPessoas(3); // 'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-
+carro.adicionarPessoas(-4); // 'Já temos 1 pessoas no carro!'
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(10); // 'Só cabem mais 4 pessoas no carro.'
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas(); // 1
 ```
