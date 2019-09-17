@@ -73,26 +73,27 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     a frase:
     "Não temos o equivalente hexadecimal para [COR]."
 */
+
 function convertToHex(color){
     switch (color) {
         case 'red':
-            console.log(color = '#f54b42'); 
+            console.log(`O hexadecimal para a cor ${color} é #f54b42`); 
             break;
 
         case 'green':
-            console.log(color = '#1f8011'); 
+            console.log(`O hexadecimal para a cor ${color} é #1f8011`); 
             break;
     
         case 'blue':
-            console.log(color = '#1c4da3'); 
+            console.log(`O hexadecimal para a cor ${color} é #1c4da3`); 
             break;
 
         case 'black':
-            console.log(color = '#000000'); 
+            console.log(`O hexadecimal para a cor ${color} é #000000`); 
             break;
 
         case 'white':
-            console.log(color = '#ffffff' );
+            console.log(`O hexadecimal para a cor ${color} é #ffffff`);
             break;
 
         default:
