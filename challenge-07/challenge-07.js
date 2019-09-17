@@ -8,15 +8,15 @@ A função deverá retornar o array atualizado.
 */
 function addItem( item ){
     arr.push(item);
+
+    return arr;
 }
 
 /*
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem([1, 'uau', function sum( x, y ) { return x + y }]);
-
-console.log(arr);
+console.log(addItem([1, 'uau', function sum( x, y ) { return x + y }]));
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
@@ -61,7 +61,7 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 console.log( 'Números ímpares entre 10 e 20:' );
 num = 10;
 
-while (num <= 20){
+while (num < 20){
     
     if(num % 2 !== 0) {
         console.log(num);
@@ -77,23 +77,21 @@ Só vamos mudar o range:
 - No segundo "for", mostre os números ímpares entre 111 e 125, inclusive eles.
 */
 console.log( 'Números pares entre 100 e 120:' );
-num = 100;
 
-while(num <= 120){
+for(var num = 100; num <= 120; num++){
 
     if(num % 2 === 0) {
         console.log(num);
     }
-   num++;
+    num++;
 }
 
 console.log( 'Números ímpares entre 111 e 125:' );
-num = 110;
 
-while(num <= 125){
+for(var num = 111; num <= 125; num++){
 
     if(num % 2 !== 0) {
         console.log(num);
     }
-   num++;
+    num++;
 }
