@@ -12,22 +12,25 @@ Invoque a função criada acima, passando dois números que serão somados, e mo
 o resultado no console, com a frase:
 "A soma de [VALOR 1] e [VALOR2] é igual a [RESULTADO]."
 */
+
+var value1 = 2;
+var value2 =  5;
  
 sum(2, 5);
 
-console.log(`A soma de 2 e 5 é igual a ${sum(2, 5)}`);
+console.log(`A soma de 2 e 5 é igual a ${sum(value1, value2)}`);
 
 /*
 Mostre no console o nome da função criada acima, com a frase:
 "O nome da função que faz a soma é [NOME DA FUNÇÃO]."
 */
-sum.name
+console.log(`O nome da função que faz a soma é ${sum.name}`);
 /*
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
-function showName(name){
-    return name;
+function showName(){
+    return 'Alessandra';
 }
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
@@ -39,8 +42,7 @@ Usando a variável criada acima, mostre no console o nome e o retorno da funçã
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log(`A função ${varShowName.name} retorna ${varShowName('Alessandra')}`);
-
+console.log(`A função ${varShowName.name} retorna ${varShowName()}`);
 
 
 /*
@@ -84,7 +86,7 @@ function calculator(operator){
         }
 
         return `Resultado da operação: ${num1} ${operator} ${num2} = ${result}`     
-    }  
+    }; 
 
 }
 
@@ -115,7 +117,7 @@ var mod = calculator('%');
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-console.log(subtraction(2, 1));
-console.log(multiplication(3, 3));
-console.log(division(10, 2));
-console.log(mod(20, 2));
+console.log( subtraction(2, 1) );
+console.log( multiplication(3, 3) );
+console.log (division(10, 2) );
+console.log( mod(20, 2) );
