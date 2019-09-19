@@ -10,8 +10,8 @@ indentação correta do código, para ficar dentro da IIFE.
     correto da variável ou função chamada.
     */
     function myFunction() {
-        var number2 = 20;
         var number1 = 10;
+        var number2 = 20;
         console.log( 'Na função `myFunction`, o primeiro número é', number1 );
         console.log( 'Na função `myFunction`, o segundo número é', number2 );
         return number1 + number2;
@@ -60,9 +60,9 @@ indentação correta do código, para ficar dentro da IIFE.
     por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
     que foram passadas para a primeira função `calculator`.
     */
-    function calculator(n1, n2){
-        return function(callback){
-            return callback(n1, n2);
+    function calculator( n1, n2 ){
+        return function( callback ){
+            return callback( n1, n2 );
         };
     }
 
@@ -83,8 +83,9 @@ indentação correta do código, para ficar dentro da IIFE.
     anônima tem como seus argumentos.
     */
     
-    console.log( 'O resultado da soma é: ' + sum( function(n1, n2) { return n1 + n2; } ) );
-    // ?
+    console.log( 'O resultado da soma é: ' + sum( function( n1, n2 ) { 
+        return n1 + n2; 
+    }) );
 
     /*
     Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
@@ -103,15 +104,23 @@ indentação correta do código, para ficar dentro da IIFE.
     As suas respostas devem estar abaixo dos `console.log` referentes à cada
     chamada.
     */
-    console.log( 'O resultado da subtração é: ' + subtraction( function(n1, n2) { return n1 - n2; } ) );
+    console.log( 'O resultado da subtração é: ' + subtraction( function( n1, n2 ) { 
+        return n1 - n2; 
+    }) );
     // 5
 
-    console.log( 'O resultado da multiplicação é: ' + multiplication( function(n1, n2) { return n1 * n2; } ) );
+    console.log( 'O resultado da multiplicação é: ' + multiplication( function( n1, n2 ) { 
+        return n1 * n2; 
+    }) );
     // 15
 
-    console.log( 'O resultado da divisão é: ' + division( function(n1, n2) { return n1 / n2; } ) );
+    console.log( 'O resultado da divisão é: ' + division( function( n1, n2 ) { 
+        return n1 / n2; 
+    }) );
     // 4
 
-    console.log( 'O resto da divisão é: ' + mod( function(n1, n2) { return n1 % n2; } ));
+    console.log( 'O resto da divisão é: ' + mod( function( n1, n2 ) { 
+        return n1 % n2; 
+    }) );
     // 0
 })();
