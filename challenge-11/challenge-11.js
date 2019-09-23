@@ -13,7 +13,7 @@
 
     do{
         console.log('Executou ao menos uma vez!');
-    } while(once === true);
+    } while( once );
     
 
     /*
@@ -53,7 +53,7 @@
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
     function moreThan( age ){
-        return person.age > age ? true : false;
+        return person.age > age;
     }
 
     console.log('The person has more than 25 years old? ' + moreThan( 25 ) );
@@ -86,14 +86,14 @@
 
         for (var i = 0; i <= 20; i++) {
             
-            if (i % 2 !== 0) {
+            if (i % 2 === 0) {
                 continue;
             }
 
             numbers.push(i);
         }
-        
-       console.log( 'Pares de 0 a 20:' + numbers);
+
+       console.log( 'Ìmpares de 0 a 20:' + numbers);
        
     
 })();
