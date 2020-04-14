@@ -28,7 +28,7 @@
     /*
     Crie um array vazio chamado `books`.
     */
-        books = [];
+        var books = [];
 
     /*
     Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
