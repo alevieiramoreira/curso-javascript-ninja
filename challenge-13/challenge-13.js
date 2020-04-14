@@ -24,9 +24,7 @@
   concatenadas. Mostre o `brasil` no console.
   */
   console.log("\nAlguns Estados do Brasil:");
-  var brasil = [];
-
-  brasil = brasil.concat(sul, sudeste);
+  var brasil = sul.concat(sudeste);
   console.log(brasil);
 
   /*
@@ -49,6 +47,10 @@
     return sul.includes(item);
   });
 
+  /*
+    outro método de fazer:
+    var newSul = brasil.slice(2, 5)
+  */
   /*
   Mostre no console os estados que estão em `newSul`.
   */
@@ -76,15 +78,12 @@
   Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
   chamada `newSudeste`.
   */
-  var newSudeste = brasil.filter(function (item) {
-    return sudeste.includes(item);
-  });
-
+  var newSudeste = brasil.splice(5);
   /*
   Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
   ficar no mesmo nível que os estados já existentes, não em um array separado.
   */
-  brasil.splice(6, 0, nordeste);
+  brasil = brasil.concat(nordeste);
 
   /*
   Mostre no console os estados em `newSudeste`.
@@ -129,10 +128,11 @@
   var verifyLength = brasil.every(function (item) {
     return item.length > 7;
   });
-
-  verifyLength
-    ? console.log("Sim, todos os estados tem mais de 7 letras!")
-    : console.log("Nem todos os estados tem mais de 7 letras!");
+  console.log(
+    verifyLength
+      ? "Sim, todos os estados tem mais de 7 letras!"
+      : "Nem todos os estados tem mais de 7 letras!"
+  );
 
   /*
   Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -144,12 +144,10 @@
   */
   console.log("\nCeará está incluído em `brasil`?");
   var verifyState = brasil.some(function (item) {
-    return item.includes("Ceará");
+    return item === "Ceará";
   });
 
-  verifyState
-    ? console.log("Ceará está incluído!")
-    : console.log("Ceará não foi incluído :(");
+  console.log(verifyState ? "Ceará está incluído!" : "Ceará não foi incluído :(");
 
   /*
   Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -157,8 +155,11 @@
   - "[ESTADO] pertence ao Brasil."
   Atribua o novo array a uma variável chamada `map`.
   */
-  var map = newBrasil.map(function (item) {
-    // TODO;
+  var map = newBrasil.map(function (item, index) {
+    return {
+      id: item.id + 1,
+      estado: item.estado + " pertence ao brasil",
+    };
   });
 
   /*
@@ -172,7 +173,7 @@
   ID par. Atribua o valor à uma variável chamada `filter`.
   */
   var filter = map.filter(function (item) {
-    return item % 2 === 0;
+    return item.id % 2 === 0;
   });
 
   /*
