@@ -88,8 +88,10 @@
   */
   console.log('\nInversed Name:');
   var inversedName = name.reduceRight(function (acumulado, atual) {
-    return (acumulado += atual);
+    return acumulado + atual;
   });
+
+  console.log('maneira mais prática: ', name.reverse().join(''));
 
   console.log(inversedName);
   /*
@@ -108,7 +110,8 @@
   o que acontece ;)
   */
   console.log('\nExiste um { number: 2 } em numberObjects?');
-  var verifyNumObj = numberObjects.indexOf(2);
+  var obj = numberObjects[1];
+  var verifyNumObj = numberObjects.indexOf(obj);
 
   console.log(
     verifyNumObj > -1
@@ -123,7 +126,7 @@
   console.log(
     '\nE buscando a partir do último índice, o { number: 2 } existe?'
   );
-  var verifyInverse = numberObjects.lastIndexOf(2, 2);
+  var verifyInverse = numberObjects.lastIndexOf(obj, 2);
   console.log(
     verifyInverse > -1
       ? 'Existe um objeto { number: 2 } em numberObjects!'
